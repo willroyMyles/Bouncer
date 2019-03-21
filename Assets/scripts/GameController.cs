@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public float level;
+    int level = 1;
     public Collider col;
     public GameObject start;
     public GameObject prefab;
@@ -13,36 +13,14 @@ public class GameController : MonoBehaviour
     public float distance = 2.0f;
     public float stageHeight;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(stageHeight);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    private int levelModifier = 10;
+  
 
     private void Awake()
     {
-        stageHeight = level * 2 + 10;
+        stageHeight = level * levelModifier + 15;
 
-        col = GetComponent<Collider>();
-
-        Instantiate(start, col.transform.position, Quaternion.identity);
-        col.transform.position = col.transform.position + new Vector3(0, -distance, 0);
-
-        for (int i = 0; i < level*2; i++)
-        {
-            float x = Random.Range(-7.23f, 7.15f);
-            Vector3 vec = new Vector3( x, col.transform.position.y, 0.0f);
-            Instantiate(prefab, vec, Quaternion.identity);
-            col.transform.position = col.transform.position + new Vector3(0, -distance, 0);
-
-        }
-        Instantiate(finish, col.transform.position, Quaternion.identity);
+        StartGame();
 
     }
 
@@ -50,5 +28,42 @@ public class GameController : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void StartGame()
+    {
+        col = GetComponent<Collider>();
+       
+
+        if(level == 1) Instantiate(start, col.transform.position, Quaternion.identity);
+        col.transform.position = col.transform.position + new Vector3(0, -distance, 0);
+
+        for (int i = 0; i < level * levelModifier; i++)
+        {
+            float x = Random.Range(-7.23f, 7.15f);
+            Vector3 vec = new Vector3(x, col.transform.position.y, 0.0f);
+            Instantiate(prefab, vec, Quaternion.identity);
+            col.transform.position = col.transform.position + new Vector3(0, -distance, 0);
+
+        }
+        col.transform.position = col.transform.position + new Vector3(0, -distance, 0);
+        Instantiate(finish, col.transform.position, Quaternion.identity);
+    }
+
+    public void UpdateLevel()
+    {
+        level++;
+        DestroyAllPlatforms();
+        StartGame();
+    }
+
+    public void DestroyAllPlatforms()
+    {
+        // TODO put small animation
+        var list = GameObject.FindGameObjectsWithTag("platform");
+        foreach( var obj in list)
+        {
+            Destroy(obj, 1);
+        }
     }
 }

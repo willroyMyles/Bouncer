@@ -1589,7 +1589,7 @@ extern const int32_t g_FieldOffsetTable2482[9];
 extern const int32_t g_FieldOffsetTable2485[6];
 extern const int32_t g_FieldOffsetTable2486[4];
 extern const int32_t g_FieldOffsetTable2487[14];
-extern const int32_t g_FieldOffsetTable2490[13];
+extern const int32_t g_FieldOffsetTable2490[15];
 extern const int32_t g_FieldOffsetTable2491[5];
 extern const int32_t g_FieldOffsetTable2492[1];
 extern const int32_t g_FieldOffsetTable2493[3];
@@ -1724,14 +1724,15 @@ extern const int32_t g_FieldOffsetTable2848[3];
 extern const int32_t g_FieldOffsetTable2850[2];
 extern const int32_t g_FieldOffsetTable2852[1];
 extern const int32_t g_FieldOffsetTable2853[1];
-extern const int32_t g_FieldOffsetTable2857[2];
-extern const int32_t g_FieldOffsetTable2858[6];
-extern const int32_t g_FieldOffsetTable2859[1];
-extern const int32_t g_FieldOffsetTable2860[3];
-extern const int32_t g_FieldOffsetTable2861[1];
-extern const int32_t g_FieldOffsetTable2863[3];
+extern const int32_t g_FieldOffsetTable2857[5];
+extern const int32_t g_FieldOffsetTable2858[2];
+extern const int32_t g_FieldOffsetTable2859[8];
+extern const int32_t g_FieldOffsetTable2860[1];
+extern const int32_t g_FieldOffsetTable2861[3];
+extern const int32_t g_FieldOffsetTable2862[1];
+extern const int32_t g_FieldOffsetTable2864[3];
 
-extern const int32_t* g_FieldOffsetTable[2864] = 
+extern const int32_t* g_FieldOffsetTable[2865] = 
 {
 	NULL,
 	NULL,
@@ -4595,8 +4596,9 @@ extern const int32_t* g_FieldOffsetTable[2864] =
 	g_FieldOffsetTable2859,
 	g_FieldOffsetTable2860,
 	g_FieldOffsetTable2861,
+	g_FieldOffsetTable2862,
 	NULL,
-	g_FieldOffsetTable2863,
+	g_FieldOffsetTable2864,
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize0;
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1;
@@ -7462,7 +7464,8 @@ extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2860;
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2861;
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2862;
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2863;
-extern const Il2CppTypeDefinitionSizes* g_Il2CppTypeDefinitionSizesTable[2864] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2864;
+extern const Il2CppTypeDefinitionSizes* g_Il2CppTypeDefinitionSizesTable[2865] = 
 {
 	(&g_typeDefinitionSize0),
 	(&g_typeDefinitionSize1),
@@ -10328,4 +10331,5 @@ extern const Il2CppTypeDefinitionSizes* g_Il2CppTypeDefinitionSizesTable[2864] =
 	(&g_typeDefinitionSize2861),
 	(&g_typeDefinitionSize2862),
 	(&g_typeDefinitionSize2863),
+	(&g_typeDefinitionSize2864),
 };

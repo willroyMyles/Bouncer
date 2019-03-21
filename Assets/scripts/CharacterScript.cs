@@ -20,10 +20,15 @@ public class CharacterScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "platform")
+        if (collision.gameObject.tag == "platform")
         {
             rb.AddForce(0, force, 0);
             //rb.AddExplosionForce(force, Vector3.up, 3);
         }
+        if (collision.gameObject.tag == "contPlatform")
+        {
+            FindObjectOfType<GameController>().UpdateLevel();
+        }
+       
     }
 }

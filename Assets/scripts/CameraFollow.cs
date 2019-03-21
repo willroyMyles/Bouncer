@@ -8,15 +8,15 @@ public class CameraFollow : MonoBehaviour
      Transform target;
      float smoothSpeed = 0.02f;
      Vector3 offset = Vector3.zero;
-     float stepSpeed = 0.1f;
+     float stepSpeed = 0.6f;
      float cutOffPoint;
 
     private void Start()
     {
         target = transform;
 
-        var go = GameObject.FindObjectOfType<GameController>();
-        cutOffPoint = go.stageHeight;
+    
+        cutOffPoint = FindObjectOfType<GameController>().stageHeight;
         Debug.Log(cutOffPoint);
     }
 
