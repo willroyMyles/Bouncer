@@ -49,15 +49,11 @@ public class platformswipe : MonoBehaviour
                 if (Physics.Raycast(raycast, out raycastHit))
                 {
 
-                    Debug.Log(raycastHit.collider.gameObject.name);
-                    Debug.Log(raycastHit.collider.transform.position);
-                   
                     var go = raycastHit.collider.gameObject;
                     go.transform.Translate(touch.deltaPosition.x / Screen.width * factor, 0.0f, 0.0f);
                     var pos = go.transform.position;
                     pos.x = Mathf.Clamp(go.transform.position.x, -7.23f, 7.15f);
                     go.transform.position = pos;
-
 
                 }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-    public float force = 30;
+    public float force = 20;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()

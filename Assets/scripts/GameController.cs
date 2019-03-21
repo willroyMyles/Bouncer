@@ -11,11 +11,12 @@ public class GameController : MonoBehaviour
     public GameObject prefab;
     public GameObject finish;
     public float distance = 2.0f;
+    public float stageHeight;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(stageHeight);
     }
 
     // Update is called once per frame
@@ -26,6 +27,8 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        stageHeight = level * 2 + 10;
+
         col = GetComponent<Collider>();
 
         Instantiate(start, col.transform.position, Quaternion.identity);
