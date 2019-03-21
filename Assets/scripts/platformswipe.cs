@@ -24,13 +24,6 @@ public class platformswipe : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 direction;
-        float speed;
-
-        Vector3 fp = new Vector3();
-        Vector3 lp = new Vector3();
-
-
 
 #if UNITY_EDITOR
         var list = InputHelper.GetTouches();
@@ -40,78 +33,39 @@ public class platformswipe : MonoBehaviour
 
         foreach (Touch touch in list)
         {
-            Vector3 touchPosition;
             Vector3 ltouch = Vector3.zero;
             Vector3 ftouch = Vector3.zero;
             if (touch.phase == TouchPhase.Began) //check for the first touch
             { 
-            //touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, transform.position.y, 0.0f));
 
-            Debug.Log("touch begin");
             }
             else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
             {
                 ltouch = Camera.main.ScreenToWorldPoint(touch.position);
-                if (Physics.Raycast(ltouch, Camera.main.transform.forward))
+
+
+                Ray raycast = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit raycastHit;
+                if (Physics.Raycast(raycast, out raycastHit))
                 {
 
+                    Debug.Log(raycastHit.collider.gameObject.name);
+                    Debug.Log(raycastHit.collider.transform.position);
+                   
+                    var go = raycastHit.collider.gameObject;
+                    go.transform.Translate(touch.deltaPosition.x / Screen.width * factor, 0.0f, 0.0f);
+                    var pos = go.transform.position;
+                    pos.x = Mathf.Clamp(go.transform.position.x, -7.23f, 7.15f);
+                    go.transform.position = pos;
 
-                    Debug.Log("touch moved  " );
-
-                    transform.Translate(touch.deltaPosition.x / Screen.width * factor, 0.0f, 0.0f);
-                    var pos = transform.position;
-                    pos.x = Mathf.Clamp(transform.position.x, -7.23f, 7.15f);
-                    transform.position = pos;
-          
-
-                    //touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, transform.position.y, 0.0f));
-                    //transform.position = Vector3.Lerp(transform.position, new Vector3(touchPosition.x, transform.position.y, 0.0f), Time.deltaTime * 5000f);
 
                 }
 
-
-                //if ((lp.x > fp.x))  //If the movement was to the right)
-                //{   //Right swipe
-                //    Debug.Log("Right Swipe");
-                //    //this.gameObject.GetComponent<Rigidbody>().MovePosition(new Vector3(lp.x, 0, 0));
-                //    Vector3 pos = this.gameObject.transform.position;
-                //    pos = pos + new Vector3(lp.x, 0, 0);
-                //    this.gameObject.transform.Translate(pos * Time.deltaTime);
-                //}
-                //else
-                //{   //Left swipe
-                //    Debug.Log("Left Swipe");
-                //    //this.gameObject.GetComponent<Rigidbody>().MovePosition(new Vector3(lp.x, 0, 0));
-                //    Vector3 pos = this.gameObject.transform.position;
-                //    pos = pos + new Vector3(lp.x, 0, 0);
-                //    this.gameObject.transform.Translate(pos * Time.deltaTime);
-                //}
             }
             else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
             {
-                Debug.Log("touch ended   " + lp);
 
-                //lp = touch.position;  //last touch position. Ommitted if you use list
-
-                ////Check if drag distance is greater than 20% of the screen height
-                //if (Mathf.Abs(lp.x - fp.x) > dragDistance || Mathf.Abs(lp.y - fp.y) > dragDistance)
-                //{//It's a drag
-                ////check if the drag is vertical or horizontal
-                //if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y))
-                //{   //If the horizontal movement is greater than the vertical movement...
-
-                //}
-                //else
-                //{   //the vertical movement is greater than the horizontal movement
-                //    if (lp.y > fp.y)  //If the movement was up
-                //    {   //Up swipe
-                //        Debug.Log("Up Swipe");
-                //    }
-                //    else
-                //    {   //Down swipe
-                //        Debug.Log("Down Swipe");
-                //    }
-                //}
+             
             }
             else
             {   //It's a tap as the drag distance is less than 20% of the screen height

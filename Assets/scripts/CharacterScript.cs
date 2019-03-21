@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharacterScript : MonoBehaviour
+{
+    public float force = 30;
+    Rigidbody rb;
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "platform")
+        {
+            rb.AddForce(0, force, 0);
+            //rb.AddExplosionForce(force, Vector3.up, 3);
+        }
+    }
+}
