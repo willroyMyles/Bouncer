@@ -14,14 +14,16 @@ public class GameController : MonoBehaviour
     public float stageHeight;
 
     private int levelModifier = 10;
-  
+    private int score = -1;
+    public TMPro.TextMeshProUGUI tmp;
+
 
     private void Awake()
     {
         stageHeight = level * levelModifier + 15;
 
         StartGame();
-
+        UpdatePoints();
     }
 
     public void restartCurrentScene()
@@ -65,5 +67,11 @@ public class GameController : MonoBehaviour
         {
             Destroy(obj, 1);
         }
+    }
+
+    public void UpdatePoints()
+    {
+        score++;
+        tmp.text = score.ToString();
     }
 }

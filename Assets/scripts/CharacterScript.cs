@@ -31,4 +31,10 @@ public class CharacterScript : MonoBehaviour
         }
        
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        FindObjectOfType<GameController>().UpdatePoints();
+        other.enabled = false;
+    }
 }
