@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -293,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e1578f5e2744bc388798b7f6af13a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepSpeed: 0.6
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -349,6 +351,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &519420033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.65, y: 0.56, z: 2}
+  m_Center: {x: 0, y: 4.2, z: 10.5}
 --- !u!1 &763985149
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7a169ec812e484d8b5a1779a0bbd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
   factor: 20
 --- !u!114 &1716262858
 MonoBehaviour:
@@ -835,6 +849,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 2465294367827064977, guid: 04f9a4a2cd9c3455e8843ece3d7f972a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465294367827064977, guid: 04f9a4a2cd9c3455e8843ece3d7f972a,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2465294367827064989, guid: 04f9a4a2cd9c3455e8843ece3d7f972a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -889,16 +913,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2465294367827064977, guid: 04f9a4a2cd9c3455e8843ece3d7f972a,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2465294367827064977, guid: 04f9a4a2cd9c3455e8843ece3d7f972a,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04f9a4a2cd9c3455e8843ece3d7f972a, type: 3}

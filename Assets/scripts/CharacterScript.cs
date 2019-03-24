@@ -29,12 +29,27 @@ public class CharacterScript : MonoBehaviour
         {
             FindObjectOfType<GameController>().UpdateLevel();
         }
-       
+
+        if(collision.gameObject.tag == "MainCamera")
+        {
+            FindObjectOfType<GameController>().endGame();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        FindObjectOfType<GameController>().UpdatePoints();
-        other.enabled = false;
+
+        if (other.CompareTag("platform"))
+        {
+            FindObjectOfType<GameController>().UpdatePoints();
+            other.enabled = false;
+        }
+
+        if(other.CompareTag("MainCamera"))
+        {
+            FindObjectOfType<GameController>().endGame();
+        }
+
     }
 }

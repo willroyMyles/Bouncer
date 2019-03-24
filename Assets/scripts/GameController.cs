@@ -86,4 +86,10 @@ public class GameController : MonoBehaviour
 
         FindObjectOfType<CameraFollow>().updateCameraSpeed();
     }
+
+    public void endGame()
+    {
+        Initiate.Fade("main_menu", Color.blue, 2.0f);
+
+    }
 }
