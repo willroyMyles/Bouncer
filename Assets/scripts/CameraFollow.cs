@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
      Transform target;
      float smoothSpeed = 0.02f;
      Vector3 offset = Vector3.zero;
-     float stepSpeed = 0.6f;
+     public float stepSpeed = 0.6f;
      float cutOffPoint;
 
     private void Start()
@@ -29,5 +29,11 @@ public class CameraFollow : MonoBehaviour
         transform.position = smoothPosition;
 
         //if (transform.position.y <= -cutOffPoint) stepSpeed = 0.0f;
+    }
+
+    public void updateCameraSpeed()
+    {
+        stepSpeed += .2f;
+        if (stepSpeed >= 2) stepSpeed = 2.0f;
     }
 }

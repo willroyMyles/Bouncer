@@ -80,4 +80,10 @@ public class GameController : MonoBehaviour
         score++;
         tmp.text = score.ToString();
     }
+
+    public void updateSpeed()
+    {
+
+        FindObjectOfType<CameraFollow>().updateCameraSpeed();
+    }
 }

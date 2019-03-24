@@ -6,13 +6,13 @@ public class platformswipe : MonoBehaviour
 {
     // Start is called before the first frame update
     private float dragDistance;
-    public float speed = 20.0f;
     public float factor = 20.0f;
 
+    Vector3 ltouch = Vector3.zero;
+    Vector3 ftouch = Vector3.zero;
     void Start()
     {
-        dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
-        speed = 20.0f;
+        dragDistance = Screen.height * 1 / 100; //dragDistance is 15% height of the screen
 
     }
 
@@ -25,6 +25,7 @@ public class platformswipe : MonoBehaviour
     void FixedUpdate()
     {
 
+
 #if UNITY_EDITOR
         var list = InputHelper.GetTouches();
 #else
@@ -33,15 +34,14 @@ public class platformswipe : MonoBehaviour
 
         foreach (Touch touch in list)
         {
-            Vector3 ltouch = Vector3.zero;
-            Vector3 ftouch = Vector3.zero;
+
             if (touch.phase == TouchPhase.Began) //check for the first touch
             { 
-
+                ftouch = Camera.main.ScreenToWorldPoint(touch.position);
             }
             else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
             {
-                ltouch = Camera.main.ScreenToWorldPoint(touch.position);
+                ltouch = Camera.main.ScreenToWorldPoint(touch.deltaPosition);
 
 
                 Ray raycast = Camera.main.ScreenPointToRay(touch.position);
@@ -61,7 +61,19 @@ public class platformswipe : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
             {
 
-             
+                if (Mathf.Abs(ltouch.x - ftouch.x) > dragDistance || Mathf.Abs(ltouch.y - ftouch.y) > dragDistance)
+                    if (Mathf.Abs(ltouch.x + ftouch.x) > Mathf.Abs(ltouch.y + ftouch.y)) // horizontal drag
+                    {
+                        Debug.Log(" ltouch " + ltouch);
+                        Debug.Log(" ftouch " + ftouch);
+
+                        Debug.Log(Mathf.Abs(ltouch.x - ftouch.x) + "touch x");
+                        Debug.Log(Mathf.Abs(ltouch.y - ftouch.y) + "touch y");
+                    }
+                    else // vertical drag
+                    {
+                        FindObjectOfType<GameController>().updateSpeed();
+                    }
             }
             else
             {   //It's a tap as the drag distance is less than 20% of the screen height
