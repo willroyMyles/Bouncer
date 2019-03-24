@@ -18,6 +18,12 @@ public class GameController : MonoBehaviour
     public TMPro.TextMeshProUGUI tmp;
 
 
+    public void loadGame()
+    {
+        Initiate.Fade("SampleScene", Color.blue, 2.0f);
+        restartCurrentScene();
+    }
+
     private void Awake()
     {
         stageHeight = level * levelModifier + 15;
