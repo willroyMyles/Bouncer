@@ -4911,6 +4911,64 @@ struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_com
 	intptr_t ___m_CachedPtr_0;
 };
 #endif // OBJECT_TAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_H
+#ifndef TOUCHPHASE_TD902305F0B673116C42548A58E8BEED50177A33D_H
+#define TOUCHPHASE_TD902305F0B673116C42548A58E8BEED50177A33D_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.TouchPhase
+struct  TouchPhase_tD902305F0B673116C42548A58E8BEED50177A33D 
+{
+public:
+	// System.Int32 UnityEngine.TouchPhase::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(TouchPhase_tD902305F0B673116C42548A58E8BEED50177A33D, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // TOUCHPHASE_TD902305F0B673116C42548A58E8BEED50177A33D_H
+#ifndef TOUCHTYPE_T27DBEAB2242247A15EDE96D740F7EB73ACC938DB_H
+#define TOUCHTYPE_T27DBEAB2242247A15EDE96D740F7EB73ACC938DB_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.TouchType
+struct  TouchType_t27DBEAB2242247A15EDE96D740F7EB73ACC938DB 
+{
+public:
+	// System.Int32 UnityEngine.TouchType::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(TouchType_t27DBEAB2242247A15EDE96D740F7EB73ACC938DB, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // TOUCHTYPE_T27DBEAB2242247A15EDE96D740F7EB73ACC938DB_H
 #ifndef CARETINFO_TA8526784E8AE82A9BA08B9D5C28483AE2416F708_H
 #define CARETINFO_TA8526784E8AE82A9BA08B9D5C28483AE2416F708_H
 #ifdef __clang__
@@ -5876,6 +5934,165 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // COMPONENT_T05064EF382ABCAF4B8C94F8A350EA85184C26621_H
+#ifndef TOUCH_T806752C775BA713A91B6588A07CA98417CABC003_H
+#define TOUCH_T806752C775BA713A91B6588A07CA98417CABC003_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Touch
+struct  Touch_t806752C775BA713A91B6588A07CA98417CABC003 
+{
+public:
+	// System.Int32 UnityEngine.Touch::m_FingerId
+	int32_t ___m_FingerId_0;
+	// UnityEngine.Vector2 UnityEngine.Touch::m_Position
+	Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  ___m_Position_1;
+	// UnityEngine.Vector2 UnityEngine.Touch::m_RawPosition
+	Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  ___m_RawPosition_2;
+	// UnityEngine.Vector2 UnityEngine.Touch::m_PositionDelta
+	Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  ___m_PositionDelta_3;
+	// System.Single UnityEngine.Touch::m_TimeDelta
+	float ___m_TimeDelta_4;
+	// System.Int32 UnityEngine.Touch::m_TapCount
+	int32_t ___m_TapCount_5;
+	// UnityEngine.TouchPhase UnityEngine.Touch::m_Phase
+	int32_t ___m_Phase_6;
+	// UnityEngine.TouchType UnityEngine.Touch::m_Type
+	int32_t ___m_Type_7;
+	// System.Single UnityEngine.Touch::m_Pressure
+	float ___m_Pressure_8;
+	// System.Single UnityEngine.Touch::m_maximumPossiblePressure
+	float ___m_maximumPossiblePressure_9;
+	// System.Single UnityEngine.Touch::m_Radius
+	float ___m_Radius_10;
+	// System.Single UnityEngine.Touch::m_RadiusVariance
+	float ___m_RadiusVariance_11;
+	// System.Single UnityEngine.Touch::m_AltitudeAngle
+	float ___m_AltitudeAngle_12;
+	// System.Single UnityEngine.Touch::m_AzimuthAngle
+	float ___m_AzimuthAngle_13;
+
+public:
+	inline static int32_t get_offset_of_m_FingerId_0() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_FingerId_0)); }
+	inline int32_t get_m_FingerId_0() const { return ___m_FingerId_0; }
+	inline int32_t* get_address_of_m_FingerId_0() { return &___m_FingerId_0; }
+	inline void set_m_FingerId_0(int32_t value)
+	{
+		___m_FingerId_0 = value;
+	}
+
+	inline static int32_t get_offset_of_m_Position_1() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_Position_1)); }
+	inline Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  get_m_Position_1() const { return ___m_Position_1; }
+	inline Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * get_address_of_m_Position_1() { return &___m_Position_1; }
+	inline void set_m_Position_1(Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  value)
+	{
+		___m_Position_1 = value;
+	}
+
+	inline static int32_t get_offset_of_m_RawPosition_2() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_RawPosition_2)); }
+	inline Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  get_m_RawPosition_2() const { return ___m_RawPosition_2; }
+	inline Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * get_address_of_m_RawPosition_2() { return &___m_RawPosition_2; }
+	inline void set_m_RawPosition_2(Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  value)
+	{
+		___m_RawPosition_2 = value;
+	}
+
+	inline static int32_t get_offset_of_m_PositionDelta_3() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_PositionDelta_3)); }
+	inline Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  get_m_PositionDelta_3() const { return ___m_PositionDelta_3; }
+	inline Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * get_address_of_m_PositionDelta_3() { return &___m_PositionDelta_3; }
+	inline void set_m_PositionDelta_3(Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  value)
+	{
+		___m_PositionDelta_3 = value;
+	}
+
+	inline static int32_t get_offset_of_m_TimeDelta_4() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_TimeDelta_4)); }
+	inline float get_m_TimeDelta_4() const { return ___m_TimeDelta_4; }
+	inline float* get_address_of_m_TimeDelta_4() { return &___m_TimeDelta_4; }
+	inline void set_m_TimeDelta_4(float value)
+	{
+		___m_TimeDelta_4 = value;
+	}
+
+	inline static int32_t get_offset_of_m_TapCount_5() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_TapCount_5)); }
+	inline int32_t get_m_TapCount_5() const { return ___m_TapCount_5; }
+	inline int32_t* get_address_of_m_TapCount_5() { return &___m_TapCount_5; }
+	inline void set_m_TapCount_5(int32_t value)
+	{
+		___m_TapCount_5 = value;
+	}
+
+	inline static int32_t get_offset_of_m_Phase_6() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_Phase_6)); }
+	inline int32_t get_m_Phase_6() const { return ___m_Phase_6; }
+	inline int32_t* get_address_of_m_Phase_6() { return &___m_Phase_6; }
+	inline void set_m_Phase_6(int32_t value)
+	{
+		___m_Phase_6 = value;
+	}
+
+	inline static int32_t get_offset_of_m_Type_7() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_Type_7)); }
+	inline int32_t get_m_Type_7() const { return ___m_Type_7; }
+	inline int32_t* get_address_of_m_Type_7() { return &___m_Type_7; }
+	inline void set_m_Type_7(int32_t value)
+	{
+		___m_Type_7 = value;
+	}
+
+	inline static int32_t get_offset_of_m_Pressure_8() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_Pressure_8)); }
+	inline float get_m_Pressure_8() const { return ___m_Pressure_8; }
+	inline float* get_address_of_m_Pressure_8() { return &___m_Pressure_8; }
+	inline void set_m_Pressure_8(float value)
+	{
+		___m_Pressure_8 = value;
+	}
+
+	inline static int32_t get_offset_of_m_maximumPossiblePressure_9() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_maximumPossiblePressure_9)); }
+	inline float get_m_maximumPossiblePressure_9() const { return ___m_maximumPossiblePressure_9; }
+	inline float* get_address_of_m_maximumPossiblePressure_9() { return &___m_maximumPossiblePressure_9; }
+	inline void set_m_maximumPossiblePressure_9(float value)
+	{
+		___m_maximumPossiblePressure_9 = value;
+	}
+
+	inline static int32_t get_offset_of_m_Radius_10() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_Radius_10)); }
+	inline float get_m_Radius_10() const { return ___m_Radius_10; }
+	inline float* get_address_of_m_Radius_10() { return &___m_Radius_10; }
+	inline void set_m_Radius_10(float value)
+	{
+		___m_Radius_10 = value;
+	}
+
+	inline static int32_t get_offset_of_m_RadiusVariance_11() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_RadiusVariance_11)); }
+	inline float get_m_RadiusVariance_11() const { return ___m_RadiusVariance_11; }
+	inline float* get_address_of_m_RadiusVariance_11() { return &___m_RadiusVariance_11; }
+	inline void set_m_RadiusVariance_11(float value)
+	{
+		___m_RadiusVariance_11 = value;
+	}
+
+	inline static int32_t get_offset_of_m_AltitudeAngle_12() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_AltitudeAngle_12)); }
+	inline float get_m_AltitudeAngle_12() const { return ___m_AltitudeAngle_12; }
+	inline float* get_address_of_m_AltitudeAngle_12() { return &___m_AltitudeAngle_12; }
+	inline void set_m_AltitudeAngle_12(float value)
+	{
+		___m_AltitudeAngle_12 = value;
+	}
+
+	inline static int32_t get_offset_of_m_AzimuthAngle_13() { return static_cast<int32_t>(offsetof(Touch_t806752C775BA713A91B6588A07CA98417CABC003, ___m_AzimuthAngle_13)); }
+	inline float get_m_AzimuthAngle_13() const { return ___m_AzimuthAngle_13; }
+	inline float* get_address_of_m_AzimuthAngle_13() { return &___m_AzimuthAngle_13; }
+	inline void set_m_AzimuthAngle_13(float value)
+	{
+		___m_AzimuthAngle_13 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // TOUCH_T806752C775BA713A91B6588A07CA98417CABC003_H
 #ifndef WORDWRAPSTATE_T415B8622774DD094A9CD7447D298B33B7365A557_H
 #define WORDWRAPSTATE_T415B8622774DD094A9CD7447D298B33B7365A557_H
 #ifdef __clang__
@@ -7038,6 +7255,10 @@ public:
 	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___ltouch_6;
 	// UnityEngine.Vector3 platformswipe::ftouch
 	Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  ___ftouch_7;
+	// UnityEngine.Touch platformswipe::firstTouch
+	Touch_t806752C775BA713A91B6588A07CA98417CABC003  ___firstTouch_8;
+	// UnityEngine.Touch platformswipe::lastTouch
+	Touch_t806752C775BA713A91B6588A07CA98417CABC003  ___lastTouch_9;
 
 public:
 	inline static int32_t get_offset_of_dragDistance_4() { return static_cast<int32_t>(offsetof(platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF, ___dragDistance_4)); }
@@ -7070,6 +7291,22 @@ public:
 	inline void set_ftouch_7(Vector3_tDCF05E21F632FE2BA260C06E0D10CA81513E6720  value)
 	{
 		___ftouch_7 = value;
+	}
+
+	inline static int32_t get_offset_of_firstTouch_8() { return static_cast<int32_t>(offsetof(platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF, ___firstTouch_8)); }
+	inline Touch_t806752C775BA713A91B6588A07CA98417CABC003  get_firstTouch_8() const { return ___firstTouch_8; }
+	inline Touch_t806752C775BA713A91B6588A07CA98417CABC003 * get_address_of_firstTouch_8() { return &___firstTouch_8; }
+	inline void set_firstTouch_8(Touch_t806752C775BA713A91B6588A07CA98417CABC003  value)
+	{
+		___firstTouch_8 = value;
+	}
+
+	inline static int32_t get_offset_of_lastTouch_9() { return static_cast<int32_t>(offsetof(platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF, ___lastTouch_9)); }
+	inline Touch_t806752C775BA713A91B6588A07CA98417CABC003  get_lastTouch_9() const { return ___lastTouch_9; }
+	inline Touch_t806752C775BA713A91B6588A07CA98417CABC003 * get_address_of_lastTouch_9() { return &___lastTouch_9; }
+	inline void set_lastTouch_9(Touch_t806752C775BA713A91B6588A07CA98417CABC003  value)
+	{
+		___lastTouch_9 = value;
 	}
 };
 
@@ -7716,12 +7953,14 @@ extern const int32_t g_FieldOffsetTable3356[1] =
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3357 = { sizeof (MenuController_t244BC6F4B06B69D85522469F892EA8375E376DA1), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3358 = { sizeof (platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable3358[4] = 
+extern const int32_t g_FieldOffsetTable3358[6] = 
 {
 	platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF::get_offset_of_dragDistance_4(),
 	platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF::get_offset_of_factor_5(),
 	platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF::get_offset_of_ltouch_6(),
 	platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF::get_offset_of_ftouch_7(),
+	platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF::get_offset_of_firstTouch_8(),
+	platformswipe_t080FFE7EE65C49CD9E1FA7C5EAC35F1997E69BBF::get_offset_of_lastTouch_9(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3359 = { sizeof (startblockscript_tA4976E5A08342D06ACBB103196946A9DDCF49072), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable3359[1] = 
