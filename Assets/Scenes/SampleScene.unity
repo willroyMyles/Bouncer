@@ -316,7 +316,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.503
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -458,6 +458,8 @@ MonoBehaviour:
   col: {fileID: 864130527}
   start: {fileID: 5500808283027645503, guid: 02d926ddbf6bf49e896f907dc8e0995a, type: 3}
   prefab: {fileID: 8377202517346886952, guid: 67b4dfe78982749d3b78d12b9ca7a623, type: 3}
+  prefabcol: {fileID: 8188532277231588420, guid: d7f438b084a890b42bc5e95444e5d2fe,
+    type: 3}
   finish: {fileID: 1599231983237965679, guid: 05d717207c4c24e89b0e0e31b0e93ad0, type: 3}
   distance: 2
   stageHeight: 0

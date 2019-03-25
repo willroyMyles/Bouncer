@@ -9,11 +9,12 @@ public class GameController : MonoBehaviour
     public Collider col;
     public GameObject start;
     public GameObject prefab;
+    public GameObject prefabcol;
     public GameObject finish;
     public float distance = 2.0f;
     public float stageHeight;
 
-    private int levelModifier = 10;
+    private int levelModifier = 5;
     private int score = -1;
     public TMPro.TextMeshProUGUI tmp;
 
@@ -48,9 +49,15 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < level * levelModifier; i++)
         {
+            GameObject go = prefab;
+            if(level > 1)
+            {
+                if (Random.Range(1, 2) % 2 == 0) go = prefab;
+                else go = prefabcol;
+            }
             float x = Random.Range(-7.23f, 7.15f);
             Vector3 vec = new Vector3(x, col.transform.position.y, 0.0f);
-            Instantiate(prefab, vec, Quaternion.identity);
+            Instantiate(go, vec, Quaternion.identity);
             col.transform.position = col.transform.position + new Vector3(0, -distance, 0);
 
         }

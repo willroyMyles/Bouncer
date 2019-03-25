@@ -16,6 +16,7 @@ public class CharacterScript : MonoBehaviour
         color = Color.red;
         rend = GetComponent<Renderer>();
         rend.material.color = color;
+
     }
 
     // Update is called once per frame

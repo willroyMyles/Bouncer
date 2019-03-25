@@ -34,13 +34,9 @@ public class platformswipe : MonoBehaviour
 #endif
 
         foreach (Touch touch in list)
-        {
-            if(touch.tapCount == 2)
-            {
-                FindObjectOfType<GameController>().changeCameraPerspective();
-            }
+        { 
 
-            if (touch.phase == TouchPhase.Began) //check for the first touch
+        if (touch.phase == TouchPhase.Began) //check for the first touch
             {
                 firstTouch = touch;
                 ftouch = Camera.main.ScreenToWorldPoint(touch.position);
