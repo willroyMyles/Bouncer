@@ -6,10 +6,16 @@ public class CharacterScript : MonoBehaviour
 {
     public float force = 20;
     Rigidbody rb;
+    Color color;
+    Renderer rend;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        color = Color.red;
+        rend = GetComponent<Renderer>();
+        rend.material.color = color;
     }
 
     // Update is called once per frame
@@ -27,12 +33,8 @@ public class CharacterScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "contPlatform")
         {
+            FindObjectOfType<GameController>().updateSpeed(0.5f);
             FindObjectOfType<GameController>().UpdateLevel();
-        }
-
-        if(collision.gameObject.tag == "MainCamera")
-        {
-            FindObjectOfType<GameController>().endGame();
         }
 
     }

@@ -36,4 +36,9 @@ public class CameraFollow : MonoBehaviour
         stepSpeed += .2f;
         if (stepSpeed >= 2) stepSpeed = 2.0f;
     }
+    public void updateCameraSpeed(float added)
+    {
+        stepSpeed += added;
+        if (stepSpeed >= 2) stepSpeed = 2.0f;
+    }
 }

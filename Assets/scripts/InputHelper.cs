@@ -5,6 +5,10 @@ using System.Collections.Generic;
 public class InputHelper : MonoBehaviour
 {
 
+    static int clicked = 1;
+    static float clicktime =0.0f;
+    static float clickdelay = .5f;
+
     private static TouchCreator lastFakeTouch;
 
     public static List<Touch> GetTouches()
@@ -13,13 +17,15 @@ public class InputHelper : MonoBehaviour
         touches.AddRange(Input.touches);
 #if UNITY_EDITOR
         if (lastFakeTouch == null) lastFakeTouch = new TouchCreator();
+
         if (Input.GetMouseButtonDown(0))
         {
             lastFakeTouch.phase = TouchPhase.Began;
             lastFakeTouch.deltaPosition = new Vector2(0, 0);
             lastFakeTouch.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             lastFakeTouch.fingerId = 0;
-        }
+          
+            }
         else if (Input.GetMouseButtonUp(0))
         {
             lastFakeTouch.phase = TouchPhase.Ended;
@@ -27,6 +33,21 @@ public class InputHelper : MonoBehaviour
             lastFakeTouch.deltaPosition = newPosition - lastFakeTouch.position;
             lastFakeTouch.position = newPosition;
             lastFakeTouch.fingerId = 0;
+
+            clicked++;
+            if (clicked == 1) clicktime = Time.time;
+
+            if (clicked > 1 && Time.time - clicktime < clickdelay)
+            {
+                clicked = 1;
+                clicktime = 0;
+                lastFakeTouch.tapCount = 2;
+
+            }
+            if (Time.time - clicktime > clickdelay)
+            {
+                clicked = 0;
+            }
         }
         else if (Input.GetMouseButton(0))
         {

@@ -83,13 +83,23 @@ public class GameController : MonoBehaviour
 
     public void updateSpeed()
     {
-
         FindObjectOfType<CameraFollow>().updateCameraSpeed();
+    }
+
+    public void updateSpeed(float speed)
+    {
+        FindObjectOfType<CameraFollow>().updateCameraSpeed(speed);
     }
 
     public void endGame()
     {
         Initiate.Fade("main_menu", Color.blue, 2.0f);
 
+    }
+
+    public void changeCameraPerspective()
+    {
+        if (Camera.main.orthographic) Camera.main.orthographic = false;
+        else Camera.main.orthographic = true;
     }
 }
