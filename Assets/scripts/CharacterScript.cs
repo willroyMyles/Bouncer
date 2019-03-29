@@ -9,6 +9,9 @@ public class CharacterScript : MonoBehaviour
     Color color;
     Renderer rend;
 
+    private bool freezeCharacter = false;
+    private Vector3 characterPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +25,23 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (freezeCharacter)
+        {
+            rb.position = characterPos;
+        }
     }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "platform")
         {
             rb.AddForce(0, force, 0);
-            //rb.AddExplosionForce(force, Vector3.up, 3);
+        }
+
+        if (collision.gameObject.tag == "enemy")
+        {
+            FindObjectOfType<GameController>().endGame();
         }
 
     }
@@ -56,9 +67,20 @@ public class CharacterScript : MonoBehaviour
 
         if (other.CompareTag("contPlatform"))
         {
-            FindObjectOfType<GameController>().updateSpeed(0.5f);
+            FindObjectOfType<GameController>().updateSpeed(0.2f);
             FindObjectOfType<GameController>().UpdateLevel();
             Destroy(other.gameObject);
         }
+    }
+
+    public void freeze()
+    {
+        characterPos = rb.position;
+        freezeCharacter = true;
+    }
+
+    public void unFreeze()
+    {
+        freezeCharacter = false;
     }
 }

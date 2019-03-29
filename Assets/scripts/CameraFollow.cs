@@ -45,7 +45,11 @@ public class CameraFollow : MonoBehaviour
         {
             t += Time.deltaTime / timeToReachTarget;
             transform.position = Vector3.Lerp(tranPos, desPos,t);
-            if (lerpTime+timeToReachTarget <= Time.time) moveCamera = false;
+            if (lerpTime + timeToReachTarget <= Time.time)
+            {
+                moveCamera = false;
+                FindObjectOfType<GameController>().freezeCharacter(false);
+            }
         }
 
         //if (transform.position.y <= -cutOffPoint) stepSpeed = 0.0f;

@@ -79,13 +79,11 @@ public class platformswipe : MonoBehaviour
                         if(firstTouch.position.y > lastTouch.position.y)
                         {
                             // swiped down
-                            Debug.Log("down");
                         }
                         else
                         {
                             //swiped up
-                            Debug.Log("up");
-                            FindObjectOfType<GameController>().updateSpeed();
+                           // FindObjectOfType<GameController>().updateSpeed();
                         }
                     }
                 }

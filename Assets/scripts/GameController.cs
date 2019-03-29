@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
         col = GetComponent<Collider>();
        
 
-        if(level == 1) Instantiate(start, col.transform.position, Quaternion.identity);
+        /*if(level == 1)*/ Instantiate(start, col.transform.position, Quaternion.identity);
         col.transform.position = col.transform.position + new Vector3(0, -distance, 0);
 
         for (int i = 0; i < level * levelModifier; i++)
@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour
 
     public void UpdateLevel()
     {
-        //TODO stop character to move camera
+        freezeCharacter(true);
         FindObjectOfType<CameraFollow>().moveCameToCharacter();
         level++;
         DestroyAllPlatforms();
@@ -110,5 +110,12 @@ public class GameController : MonoBehaviour
     {
         if (Camera.main.orthographic) Camera.main.orthographic = false;
         else Camera.main.orthographic = true;
+    }
+
+    public void freezeCharacter(bool freeze)
+    {
+        if(freeze) FindObjectOfType<CharacterScript>().freeze();
+        else FindObjectOfType<CharacterScript>().unFreeze();
+
     }
 }
