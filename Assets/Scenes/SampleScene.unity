@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepSpeed: 0.6
+  character: {fileID: 2042879731}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

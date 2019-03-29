@@ -32,11 +32,6 @@ public class CharacterScript : MonoBehaviour
             rb.AddForce(0, force, 0);
             //rb.AddExplosionForce(force, Vector3.up, 3);
         }
-        if (collision.gameObject.tag == "contPlatform")
-        {
-            FindObjectOfType<GameController>().updateSpeed(0.5f);
-            FindObjectOfType<GameController>().UpdateLevel();
-        }
 
     }
 
@@ -54,5 +49,16 @@ public class CharacterScript : MonoBehaviour
             FindObjectOfType<GameController>().endGame();
         }
 
+        if (other.CompareTag("startPlatform"))
+        {
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("contPlatform"))
+        {
+            FindObjectOfType<GameController>().updateSpeed(0.5f);
+            FindObjectOfType<GameController>().UpdateLevel();
+            Destroy(other.gameObject);
+        }
     }
 }

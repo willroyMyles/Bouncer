@@ -67,6 +67,8 @@ public class GameController : MonoBehaviour
 
     public void UpdateLevel()
     {
+        //TODO stop character to move camera
+        FindObjectOfType<CameraFollow>().moveCameToCharacter();
         level++;
         DestroyAllPlatforms();
         StartGame();

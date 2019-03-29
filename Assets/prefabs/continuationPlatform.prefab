@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1599231983237965667}
   - component: {fileID: 1599231983237965676}
   - component: {fileID: 1599231983237965677}
-  - component: {fileID: 1599231983237965678}
   m_Layer: 0
   m_Name: continuationPlatform
   m_TagString: contPlatform
@@ -87,21 +86,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599231983237965679}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1599231983237965678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599231983237965679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05acb13f653c44794b4f5b6585aa4507, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}

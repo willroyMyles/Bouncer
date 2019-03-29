@@ -10,11 +10,21 @@ public class CameraFollow : MonoBehaviour
      Vector3 offset = Vector3.zero;
      public float stepSpeed = 0.6f;
      float cutOffPoint;
+    public GameObject character;
+
+    private bool moveCamera = false;
+    private float lerpTime;
+    private float timeToReachTarget;
+    float t;
+
+    float dist;
+    Vector3 desPos;
+    Vector3 smoPos;
+    Vector3 tranPos;
 
     private void Start()
     {
         target = transform;
-
     
         cutOffPoint = FindObjectOfType<GameController>().stageHeight;
         Debug.Log(cutOffPoint);
@@ -23,10 +33,20 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        var desiredPosition = target.position + new Vector3(0.0f, -stepSpeed, 0.0f);
-        //Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothPosition;
+
+        if (!moveCamera)
+        {
+            var desiredPosition = target.position + new Vector3(0.0f, -stepSpeed, 0.0f);
+            //Vector3 desiredPosition = target.position + offset;
+            Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothPosition;
+        }
+        else
+        {
+            t += Time.deltaTime / timeToReachTarget;
+            transform.position = Vector3.Lerp(tranPos, desPos,t);
+            if (lerpTime+timeToReachTarget <= Time.time) moveCamera = false;
+        }
 
         //if (transform.position.y <= -cutOffPoint) stepSpeed = 0.0f;
     }
@@ -40,5 +60,16 @@ public class CameraFollow : MonoBehaviour
     {
         stepSpeed += added;
         if (stepSpeed >= 2) stepSpeed = 2.0f;
+    }
+    public void moveCameToCharacter()
+    {
+        //stop character to move camera
+        lerpTime = Time.time;
+        timeToReachTarget = 1.75f;
+        dist = Vector3.Distance(character.transform.position, transform.position);
+        float yOffset = 3.0f;
+        tranPos = transform.position;
+        desPos = transform.position + new Vector3(0.0f, -dist + yOffset, 0.0f);
+        moveCamera = true;
     }
 }
