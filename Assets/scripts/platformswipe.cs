@@ -15,6 +15,9 @@ public class platformswipe : MonoBehaviour
 
     Touch firstTouch;
     Touch lastTouch;
+
+    GameObject currentGameObject;
+    bool hasGameObject = false;
     void Start()
     {
         dragDistance = Screen.height * 5 / 100; //dragDistance is 15% height of the screen
@@ -40,30 +43,47 @@ public class platformswipe : MonoBehaviour
             {
                 firstTouch = touch;
                 ftouch = Camera.main.ScreenToWorldPoint(touch.position);
-            }
-            else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
-            {
-                ltouch = Camera.main.ScreenToWorldPoint(touch.deltaPosition);
-
 
                 Ray raycast = Camera.main.ScreenPointToRay(touch.position);
                 RaycastHit raycastHit;
                 if (Physics.Raycast(raycast, out raycastHit))
                 {
+                    if(raycastHit.collider.CompareTag("platform"))  currentGameObject = raycastHit.collider.gameObject;
+                    hasGameObject = true;
+                }
 
-                    var go = raycastHit.collider.gameObject;
-                    go.transform.Translate(touch.deltaPosition.x / Screen.width * factor, 0.0f, 0.0f);
-                    var pos = go.transform.position;
-                    pos.x = Mathf.Clamp(go.transform.position.x, -7.23f, 7.15f);
-                    go.transform.position = pos;
+            }
+            else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
+            {
+                //ltouch = Camera.main.ScreenToWorldPoint(touch.deltaPosition);
 
+
+                //Ray raycast = Camera.main.ScreenPointToRay(touch.position);
+                //RaycastHit raycastHit;
+                //if (Physics.Raycast(raycast, out raycastHit))
+                //{
+
+                //    var go = raycastHit.collider.gameObject;
+                //    go.transform.Translate(touch.deltaPosition.x / Screen.width * factor, 0.0f, 0.0f);
+                //    var pos = go.transform.position;
+                //    pos.x = Mathf.Clamp(go.transform.position.x, -7.23f, 7.15f);
+                //    go.transform.position = pos;
+
+                //}
+                if (hasGameObject)
+                {
+                    currentGameObject.transform.Translate(touch.deltaPosition.x / Screen.width * factor, 0.0f, 0.0f);
+                    var pos = currentGameObject.transform.position;
+                    pos.x = Mathf.Clamp(currentGameObject.transform.position.x, -7.23f, 7.15f);
+                    currentGameObject.transform.position = pos;
                 }
 
             }
             else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
             {
                 lastTouch = touch;
-               
+
+                hasGameObject = false;
 
                 if(Mathf.Abs(firstTouch.position.x - lastTouch.position.x) > dragDistance ||
                     Mathf.Abs(firstTouch.position.y - lastTouch.position.y) > dragDistance)

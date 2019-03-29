@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 140261625413662770}
   - component: {fileID: 140261625413662771}
   - component: {fileID: 140261625413662772}
-  - component: {fileID: 140261625413662773}
   m_Layer: 0
   m_Name: leftcube
   m_TagString: platform
@@ -78,19 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &140261625413662773
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140261625413662774}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &485696639174605046
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +88,6 @@ GameObject:
   - component: {fileID: 1690360587012711059}
   - component: {fileID: 8505060949828228809}
   - component: {fileID: 1843112368933851549}
-  - component: {fileID: 9093643207667409705}
   m_Layer: 0
   m_Name: rightcube
   m_TagString: platform
@@ -169,19 +154,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9093643207667409705
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485696639174605046}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8377202517346886952
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7a169ec812e484d8b5a1779a0bbd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
   factor: 20
 --- !u!65 &772979505818979354
 BoxCollider:

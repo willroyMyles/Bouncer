@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
         level++;
         DestroyAllPlatforms();
         StartGame();
+        FindObjectOfType<CharacterScript>().addsForce(60);
     }
 
     public void DestroyAllPlatforms()

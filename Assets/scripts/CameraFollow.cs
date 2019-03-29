@@ -71,9 +71,11 @@ public class CameraFollow : MonoBehaviour
         lerpTime = Time.time;
         timeToReachTarget = 1.75f;
         dist = Vector3.Distance(character.transform.position, transform.position);
-        float yOffset = 3.0f;
+        var distance = character.transform.position.y - transform.position.y;
+        Debug.Log(distance + "  "+ dist);
+        float yOffset = -7.0f;
         tranPos = transform.position;
-        desPos = transform.position + new Vector3(0.0f, -dist + yOffset, 0.0f);
+        desPos = character.transform.position + new Vector3(0.0f, + yOffset, -10.0f);
         moveCamera = true;
     }
 }

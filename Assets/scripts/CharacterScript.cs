@@ -27,7 +27,7 @@ public class CharacterScript : MonoBehaviour
     {
         if (freezeCharacter)
         {
-            rb.position = characterPos;
+          //  rb.position = characterPos;
         }
     }
     
@@ -44,6 +44,13 @@ public class CharacterScript : MonoBehaviour
             FindObjectOfType<GameController>().endGame();
         }
 
+        if (collision.gameObject.CompareTag("contPlatform"))
+        {
+            rb.AddForce(0, force, 0);
+            Destroy(collision.gameObject);
+            FindObjectOfType<GameController>().updateSpeed(0.2f);
+            FindObjectOfType<GameController>().UpdateLevel();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -65,12 +72,6 @@ public class CharacterScript : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.CompareTag("contPlatform"))
-        {
-            FindObjectOfType<GameController>().updateSpeed(0.2f);
-            FindObjectOfType<GameController>().UpdateLevel();
-            Destroy(other.gameObject);
-        }
     }
 
     public void freeze()
@@ -82,5 +83,10 @@ public class CharacterScript : MonoBehaviour
     public void unFreeze()
     {
         freezeCharacter = false;
+    }
+
+    public void addsForce(int fo)
+    {
+        rb.AddForce(0, fo, 0);
     }
 }
